@@ -10,7 +10,8 @@ public class Main {
             System.out.println("\n=== Student Management System ===");
             System.out.println("1. Add Student");
             System.out.println("2. View Students");
-            System.out.println("3. Exit");
+            System.out.println("3. Search Student");
+            System.out.println("4. Exit");
             System.out.print("Choose an option: ");
 
             int choice = sc.nextInt();
@@ -40,9 +41,22 @@ public class Main {
                     break;
 
                 case 3:
-                    System.out.println("👋 Exiting program...");
-                    sc.close();
-                    return;
+                    System.out.print("Enter student ID to search: ");
+                    int searchId = sc.nextInt();
+
+                    Student found = manager.searchStudentById(searchId);
+                    if (found != null) {
+                        System.out.println(
+                                "ID: " + found.getId() +
+                                        ", Name: " + found.getName() +
+                                        ", Age: " + found.getAge() +
+                                        ", Course: " + found.getCourse()
+                        );
+                    } else {
+                        System.out.println("❌ Student not found.");
+                    }
+                    break;
+
 
                 default:
                     System.out.println("❌ Invalid choice!");

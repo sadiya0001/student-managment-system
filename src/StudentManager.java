@@ -27,4 +27,15 @@ public class StudentManager {
         }
 
     }
+
+    //search student
+    public Student searchStudentById(int id) {
+        for (Student s : students) {
+            if (s.getId() == id) {
+                return s;
+            }
+        }
+        return null;
+    }
+
 }
