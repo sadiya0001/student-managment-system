@@ -13,17 +13,18 @@ public class StudentManager {
     }
 
 
-    //view student
+    //view student`
 
     public void viewStudent(){ 
         if(students.isEmpty()){
             System.out.println("⚠ No students found.");
             return;
-        }
+        }else{
 
         System.out.println("\n--- Student List ---");
-        for(Student s : students){
-            System.out.println("ID: "+s.getId()+", Name: "+ s.getName() + ", Age: " + s.getAge() + ", Course: " + s.getCourse());
+        for(Student s : students) {
+            System.out.println("ID: " + s.getId() + ", Name: " + s.getName() + ", Age: " + s.getAge() + ", Course: " + s.getCourse());
+        }
         }
 
     }
@@ -37,5 +38,15 @@ public class StudentManager {
         }
         return null;
     }
+
+    public boolean deleteStudent(int id) {
+        Student s = searchStudentById(id);
+        if (s != null) {
+            students.remove(s);
+            return true;
+        }
+        return false;
+    }
+
 
 }
