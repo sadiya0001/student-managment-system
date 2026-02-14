@@ -12,7 +12,8 @@ public class Main {
             System.out.println("2. View Students");
             System.out.println("3. Search Student");
             System.out.println("4. Delete Student");
-            System.out.println("5. Exit");
+            System.out.println("5. Update Student");
+            System.out.println("6. Exit");
             System.out.print("Choose an option: ");
 
             int choice = sc.nextInt();
@@ -71,9 +72,33 @@ public class Main {
                         System.out.println("❌ Student not found.");
                     }
                     break;
-
-
                 case 5:
+                    System.out.print("Enter ID to update: ");
+                    int updateId = sc.nextInt();
+                    sc.nextLine();
+
+                    System.out.print("Enter new name: ");
+                    String newName = sc.nextLine();
+
+                    System.out.print("Enter new age: ");
+                    int newAge = sc.nextInt();
+                    sc.nextLine();
+
+                    System.out.print("Enter new course: ");
+                    String newCourse = sc.nextLine();
+
+                    boolean updated = manager.updateStudent(updateId, newName, newAge, newCourse);
+
+                    if (updated) {
+                        System.out.println("✅ Student updated successfully.");
+                    } else {
+                        System.out.println("❌ Student not found.");
+                    }
+                    break;
+
+
+
+                case 6:
                     System.out.println("👋 Exiting program...");
                     sc.close();
                     return;
