@@ -6,6 +6,9 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         StudentManager manager = new StudentManager();
 
+        manager.loadFromFile();
+
+
         while (true) {
             System.out.println("\n=== Student Management System ===");
             System.out.println("1. Add Student");
@@ -39,7 +42,7 @@ public class Main {
                     break;
 
                 case 2:
-                    manager.viewStudent();
+                    manager.viewStudents();
                     break;
 
                 case 3:
@@ -99,6 +102,7 @@ public class Main {
 
 
                 case 6:
+                    manager.saveToFile();
                     System.out.println("👋 Exiting program...");
                     sc.close();
                     return;
