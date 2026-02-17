@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.util.ArrayList;
 import java.io.*;
 
@@ -48,8 +49,17 @@ public class StudentManager {
 
     //add student
     public void addStudent(Student student){
-        students.add(student);
-        System.out.println("✅ Student added successfully!");
+        if (searchStudentById(student.getId()) != null) {
+            System.out.println("❌ Student ID already exists!");
+
+        }
+
+        else{
+            students.add(student);
+            System.out.println("✅ Student added successfully!");
+
+        }
+
 
     }
 
@@ -59,7 +69,7 @@ public class StudentManager {
     public void viewStudents(){
         if(students.isEmpty()){
             System.out.println("⚠ No students found.");
-            return;
+
         }else{
 
         System.out.println("\n--- Student List ---");
