@@ -16,7 +16,9 @@ public class Main {
             System.out.println("3. Search Student");
             System.out.println("4. Delete Student");
             System.out.println("5. Update Student");
-            System.out.println("6. Exit");
+            System.out.println("7. Sort by ID");
+            System.out.println("8. Sort by Name");
+            System.out.println("9. Exit");
             System.out.print("Choose an option: ");
 
             int choice = sc.nextInt();
@@ -106,6 +108,16 @@ public class Main {
                     System.out.println("👋 Exiting program...");
                     sc.close();
                     return;
+
+                case 7:
+                    manager.sortById();
+                    manager.viewStudents();
+                    break;
+
+                case 8:
+                    manager.sortByName();
+                    manager.viewStudents();
+                    break;
 
 
                 default:

@@ -111,5 +111,17 @@ public class StudentManager {
         return false;
     }
 
+    //Sort by ID
+    public void sortById() {
+        students.sort((s1, s2) -> Integer.compare(s1.getId(), s2.getId()));
+        System.out.println("✅ Sorted by ID.");
+    }
+
+    //Sort by Name
+    public void sortByName() {
+        students.sort((s1, s2) -> s1.getName().compareToIgnoreCase(s2.getName()));
+        System.out.println("✅ Sorted by Name.");
+    }
+
 
 }
